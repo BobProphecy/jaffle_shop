@@ -2,7 +2,7 @@
   "id" : "stg_payments",
   "metainfo" : {
     "label" : "stg_payments",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -20,6 +20,8 @@
       "component" : "Seed",
       "metadata" : {
         "label" : "source",
+        "x" : 20,
+        "y" : 20,
         "phase" : 0,
         "comment" : "-\n    Normally we would select from the table here, but we are using seeds to load\n    our data in this project\n    "
       },
@@ -68,6 +70,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "renamed",
+        "x" : 220,
+        "y" : 20,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -124,6 +128,30 @@
         } ],
         "outputs" : [ {
           "id" : "VCRsGlv0",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "payment_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "order_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "payment_method",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -135,6 +163,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "stg_payments",
+        "x" : 420,
+        "y" : 20,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -151,10 +181,58 @@
       "ports" : {
         "inputs" : [ {
           "id" : "lsGSXDlv",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "payment_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "order_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "payment_method",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
           "slug" : "renamed"
         } ],
         "outputs" : [ {
           "id" : "oBMoyv2H",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "payment_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "order_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "payment_method",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
